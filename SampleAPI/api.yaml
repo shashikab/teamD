@@ -1,14 +1,14 @@
 type: api
 version: v4.4.0
 data:
-  name: PizzaShackAPI
-  description: |
-    This is a RESTFul API for Pizza Shack online pizza delivery store.
-  context: /pizzashack
-  version: 1.0.0
+  name: SwaggerPetstore
+  description: 'This is a sample server Petstore server.  You can find out more about
+    Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For
+    this sample, you can use the api key `special-key` to test the authorization filters.'
+  context: /v2
+  version: 1.0.7
   provider: admin
   lifeCycleStatus: CREATED
-  isDefaultVersion: true
   isRevision: false
   revisionId: 0
   type: HTTP
@@ -16,34 +16,17 @@ data:
   - http
   - https
   tags:
-  - menu
-  - order
+  - pet
+  - store
+  - user
   policies:
   - Unlimited
   visibility: PUBLIC
-  corsConfiguration:
-    corsConfigurationEnabled: true
-    accessControlAllowOrigins:
-    - '*'
-    accessControlAllowHeaders:
-    - authorization
-    - Access-Control-Allow-Origin
-    - Content-Type
-    - SOAPAction
-    - apikey
-    - Internal-Key
-    accessControlAllowMethods:
-    - GET
-    - PUT
-    - POST
-    - DELETE
-    - PATCH
-    - OPTIONS
   endpointConfig:
     endpoint_type: http
     production_endpoints:
-      url: https://localhost:9443/am/sample/pizzashack/v1/api/
+      url: http://localhost:8080
     sandbox_endpoints:
-      url: https://localhost:9443/am/sample/pizzashack/v1/api/
+      url: http://localhost:8081
   endpointImplementationType: ENDPOINT
   websubSubscriptionConfiguration: null
