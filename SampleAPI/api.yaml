@@ -1,7 +1,7 @@
 type: api
 version: v4.5.0
 data:
-  id: 2e6981c0-7c7f-4d8c-91c6-1feec1932de3
+  id: 05ce2d6c-0543-4f8a-befb-c8fd52621f6c
   name: PizzaShackAPI
   description: This is a simple API for Pizza Shack online pizza delivery store.
   context: /pizzashack
@@ -12,8 +12,9 @@ data:
   cacheTimeout: 300
   hasThumbnail: false
   isDefaultVersion: false
-  isRevision: false
-  revisionId: 0
+  isRevision: true
+  revisionedApiId: 8dd906d9-a995-4451-b78f-83cc79a0460e
+  revisionId: 2
   enableSchemaValidation: false
   enableSubscriberVerification: false
   type: HTTP
@@ -36,7 +37,7 @@ data:
   visibleRoles: []
   visibleTenants: []
   visibleOrganizations:
-   - carbon.super
+   - none
   mediationPolicies: []
   subscriptionAvailability: CURRENT_TENANT
   subscriptionAvailableTenants: []
@@ -73,9 +74,9 @@ data:
     secret: ""
     signingAlgorithm: SHA1
     signatureHeader: x-hub-signature
-  createdTime: "1745299957276"
-  lastUpdatedTimestamp: "1745299957521"
-  lastUpdatedTime: 2025-04-22 11:02:37.521
+  createdTime: "1745942897353"
+  lastUpdatedTimestamp: "1745942897353"
+  lastUpdatedTime: 2025-04-29 21:38:17.353
   endpointConfig:
     endpoint_type: http
     sandbox_endpoints:
@@ -85,66 +86,374 @@ data:
   endpointImplementationType: ENDPOINT
   subtypeConfiguration:
     subtype: DEFAULT
-  scopes: []
+  scopes:
+   -
+    scope:
+      name: read:pets
+      displayName: read:pets
+      description: read your pets
+      bindings: []
+    shared: false
+   -
+    scope:
+      name: write:pets
+      displayName: write:pets
+      description: modify pets in your account
+      bindings: []
+    shared: false
   operations:
    -
     id: ""
-    target: /order
-    verb: POST
-    authType: Application & Application User
-    throttlingPolicy: Unlimited
-    scopes: []
-    usedProductIds: []
-    operationPolicies:
-      request: []
-      response: []
-      fault: []
-   -
-    id: ""
-    target: /menu
-    verb: GET
-    authType: Application & Application User
-    throttlingPolicy: Unlimited
-    scopes: []
-    usedProductIds: []
-    operationPolicies:
-      request: []
-      response: []
-      fault: []
-   -
-    id: ""
-    target: "/order/{orderId}"
-    verb: GET
-    authType: Application & Application User
-    throttlingPolicy: Unlimited
-    scopes: []
-    usedProductIds: []
-    operationPolicies:
-      request: []
-      response: []
-      fault: []
-   -
-    id: ""
-    target: "/order/{orderId}"
+    target: /pet
     verb: PUT
     authType: Application & Application User
-    throttlingPolicy: Unlimited
-    scopes: []
+    scopes:
+     - write:pets
+     - read:pets
     usedProductIds: []
     operationPolicies:
-      request: []
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
       response: []
       fault: []
    -
     id: ""
-    target: "/order/{orderId}"
-    verb: DELETE
+    target: /pet
+    verb: POST
     authType: Application & Application User
-    throttlingPolicy: Unlimited
+    scopes:
+     - write:pets
+     - read:pets
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: "/pet/{petId}"
+    verb: GET
+    authType: Application & Application User
     scopes: []
     usedProductIds: []
     operationPolicies:
-      request: []
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: "/pet/{petId}"
+    verb: POST
+    authType: Application & Application User
+    scopes:
+     - write:pets
+     - read:pets
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: "/pet/{petId}"
+    verb: DELETE
+    authType: Application & Application User
+    scopes:
+     - write:pets
+     - read:pets
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: "/pet/{petId}/uploadImage"
+    verb: POST
+    authType: Application & Application User
+    scopes:
+     - write:pets
+     - read:pets
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: /pet/findByStatus
+    verb: GET
+    authType: Application & Application User
+    scopes:
+     - write:pets
+     - read:pets
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: /pet/findByTags
+    verb: GET
+    authType: Application & Application User
+    scopes:
+     - write:pets
+     - read:pets
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: /store/inventory
+    verb: GET
+    authType: Application & Application User
+    scopes: []
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: /store/order
+    verb: POST
+    authType: Application & Application User
+    scopes: []
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: "/store/order/{orderId}"
+    verb: GET
+    authType: Application & Application User
+    scopes: []
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: "/store/order/{orderId}"
+    verb: DELETE
+    authType: Application & Application User
+    scopes: []
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: /user
+    verb: POST
+    authType: Application & Application User
+    scopes: []
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: "/user/{username}"
+    verb: GET
+    authType: Application & Application User
+    scopes: []
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: "/user/{username}"
+    verb: PUT
+    authType: Application & Application User
+    scopes: []
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: "/user/{username}"
+    verb: DELETE
+    authType: Application & Application User
+    scopes: []
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: /user/createWithArray
+    verb: POST
+    authType: Application & Application User
+    scopes: []
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: /user/createWithList
+    verb: POST
+    authType: Application & Application User
+    scopes: []
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: /user/login
+    verb: GET
+    authType: Application & Application User
+    scopes: []
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
+      response: []
+      fault: []
+   -
+    id: ""
+    target: /user/logout
+    verb: GET
+    authType: Application & Application User
+    scopes: []
+    usedProductIds: []
+    operationPolicies:
+      request:
+       -
+        policyName: addLogMessage
+        policyVersion: v1
+        policyType: common
+        policyId: 7d0b614a-70fc-4795-9653-5952f6c375dc
+        parameters: {}
       response: []
       fault: []
   categories: []
