@@ -3,7 +3,7 @@ version: v4.5.0
 data:
   id: 00cea96f-fa2d-4a96-a17a-77b03e165863
   name: SwaggerPetstore
-  description: "This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters."
+  description: "This is a samp le server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters."
   context: /v2
   version: 1.0.7
   provider: admin
