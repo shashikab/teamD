@@ -25,7 +25,7 @@ tags:
   name: order
   description: Operations related to order management.
 paths:
-  order:
+  /order:
     post:
       tags:
        - order
